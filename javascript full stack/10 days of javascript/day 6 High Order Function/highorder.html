@@ -7,11 +7,20 @@
 </head>
 <body>
     <script>
-        document.addEventListener("click",cd)
-        function cd()
-        {
-            alert("click Again")
-        }
+        //this is high order function because it accept a function as agruement
+        // document.addEventListener("click",cd)
+        // function cd()
+        // {
+        //     alert("click Again")
+        // }
+        
+    //not high oerder function
+    function doubleMe(x)
+    {
+        return x * 2
+
+    }
+    document.write(doubleMe(20))
     </script>
 </body>
 </html>
