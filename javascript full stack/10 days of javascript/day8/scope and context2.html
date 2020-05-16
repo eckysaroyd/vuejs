@@ -18,10 +18,17 @@
                     console.log(this)
                 }
                 IamAFunctionNotAMethods()
-                console.log(this.firstName + " " + this.lastName + "  is driving a car")
+                console.log(this.firstName + " " + this.lastName + "  is driving a car. ")
             }
         }
        john.drivecar()
+
+       function breathe()
+       {
+           console.log(this.firstName + " " + this.lastName + "  just inhaled and exhaled. ")
+       }
+       breathe.call(john)
+//the this keyworf points towards the object that is executing the current function.
     </script>
 </body>
 </html>
