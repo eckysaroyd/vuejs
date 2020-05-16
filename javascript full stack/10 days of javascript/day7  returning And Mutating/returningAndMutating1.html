@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>script</title>
+</head>
+<body>
+    <script>
+        let pets =[
+
+            {name:"cat",age:4},
+            {name:"dog",age:7},
+            {name:"lion",age:9}
+        ]
+//push() methods is going to change and modify our array,also its return the value
+       // pets.push({name:"cow",age:11})
+        console.log(pets.push({name:"cow",age:11}))
+
+//map() is higher order fuctunction, its used to return new value
+
+       let ourTest=  pets.map(nameOnly)
+
+        function nameOnly(x)
+        {
+            return x.name
+        }
+        console.log(ourTest)
+    </script>
+</body>
+</html>
