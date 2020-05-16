@@ -13,6 +13,11 @@
             lastName :"DOE",
             drivecar()
             {
+                function IamAFunctionNotAMethods()
+                {
+                    console.log(this)
+                }
+                IamAFunctionNotAMethods()
                 console.log(this.firstName + " " + this.lastName + "  is driving a car")
             }
         }
