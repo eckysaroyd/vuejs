@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCOPE And context</title>
+</head>
+<body>
+    <script>
+       //scope is the bigest source of confusion regarding variables
+       //context is the bigest source of confusion regarding objects
+       let myName = "ECKY"
+
+       function amazingFunction()
+       {
+           console.log(myName)
+       }
+       amazingFunction()
+    </script>
+</body>
+</html>
