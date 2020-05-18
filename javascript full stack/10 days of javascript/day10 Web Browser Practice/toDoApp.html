@@ -8,20 +8,32 @@
 <body>
     <h1>To-Do App</h1>
     <form id="ourForm">
-        <input type="text" autocomplete="off">
+        <input id="ourField" type="text" autocomplete="off">
         <button>Create Item</button>
     </form>
 
     <h3>Need TO Do</h3>
-    <ul>
-        <li></li>
+    <ul id="ourList">
+        
     </ul>
     <script>
        let ourForm =  document.getElementById("ourForm")
-       ourForm.addEventListener("click",()=>
+        let ourField = document.getElementById("ourField")
+        let ourList = document.getElementById("ourList")
+
+       ourForm.addEventListener("submit",(e)=>
+       
        {
-           alert("Thank yoi for click my form")
+        e.preventDefault()
+         //  alert("Thank yoi for click my form")
+
+         createItems(ourField.value)
        })
+       function createItems(x)
+       {
+           let ourHTML =`<li>${x}<button>delete</button>`
+        ourList.insertAdjacentHTML("beforeend",ourHTML)
+       }
     </script>
 </body>
 </html>
