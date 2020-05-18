@@ -31,8 +31,15 @@
        })
        function createItems(x)
        {
-           let ourHTML =`<li>${x}<button>delete</button>`
+           let ourHTML =`<li>${x}<button onclick="deleteItems(this)">delete</button>`
         ourList.insertAdjacentHTML("beforeend",ourHTML)
+            
+        ourField.value = ""
+        ourField.focus()
+       }
+       function deleteItems()
+       {
+           alert("deleted")
        }
     </script>
 </body>
