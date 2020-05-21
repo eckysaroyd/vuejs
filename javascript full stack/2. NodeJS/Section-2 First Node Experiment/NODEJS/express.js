@@ -1,7 +1,7 @@
 let express = require("express")
 let ourApp = express()
 
-ourApp.use(express.urlencoded({extended: false})) //TO Activate our express using  input name
+ourApp.use(express.urlencoded({extended: false}))
 ourApp.get('/',function(req,res)
 {
 res.send(`
