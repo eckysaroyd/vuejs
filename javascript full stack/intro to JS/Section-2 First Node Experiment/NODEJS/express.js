@@ -10,5 +10,8 @@ res.send(`
 </form>
 `)
 })
-
+ourApp.post('/answer', function(req,res){
+    
+    res.send("Thank you for submitting the form")
+})
 ourApp.listen(3000)
