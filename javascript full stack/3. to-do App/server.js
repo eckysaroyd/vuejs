@@ -1,6 +1,18 @@
 let express =  require("express")
  
+let mongodb = require("mongodb")
+
 let app = express()
+
+let db 
+
+let connectionString = 'mongodb+srv://Peace:Peaceblessing@1@cluster0-ra4ct.mongodb.net/to-do-App?retryWrites=true&w=majority'
+//mongodb.connect(a = connection striing,b,c)
+mongodb.connect(connectionString, {useNewUrlParser: true}, function(err, client)
+{
+db = client.db()
+app.listen(3000)
+})
 
 app.use(express.urlencoded({extended: false}))
 
@@ -63,9 +75,14 @@ app.get('/', function(req, res)
 
 app.post('/create-items', function(req,res)
 {
-    console.log(req.body.item)
+   //console.log(req.body.item)
+   db.collection('items').insertOne({text: req.body.item},function()
+   {
     res.send("Thank You For submit")
+   })  
 })
 
 
-app.listen(3000)
+
+
+//nodemon - node start your app, and mon is monetary your app
