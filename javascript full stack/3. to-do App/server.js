@@ -29,12 +29,14 @@ app.get('/', function(req, res)
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Simple To-Do App</title>
+ <title>SIMPLE APP</title>
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-</head>
+ <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ <link rel="shortcut icon" href="images/favicon.ico" />
+ </head>
 <body>
  <div class="container">
-   <h1 class="display-4 text-center py-1">SAMPLE LIST</h1>
+   <h1 class="display-4 text-center py-1">SIMPLE APP</h1>
    
    <div class="jumbotron p-3 shadow-sm">
      <form id ="create-form" action="/create-items" method="POST">
@@ -46,22 +48,47 @@ app.get('/', function(req, res)
    </div>
    
    <ul class="list-group pb-5" id="item-list">
-     ${items.map(function(item)
-       {
-          return `<li class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
-          <span class="item-text">${item.text}</span>
-          <div>
-            <button data-id ="${item._id}" class="edit-me btn btn-secondary btn-sm mr-1">Edit</button>
-            <button data-id ="${item._id}"  class="delete-me btn btn-danger btn-sm">Delete</button>
-          </div>
-        </li>`
-       }).join("")
-    }
    </ul>
    
  </div>
+
+          <div class="card text-center">
+          <div class="card-header">
+            Featured
+          </div>
+          <div class="card-body" style="color:elegant-color-dark">
+            <h5 class="card-title"> MONGODB | EXPRESSJS | REACTJS | NODEJS</h5>
+            <p class="card-text">This is a small project where you can learn using of MERN Stack in building a  Simple live project.<br>
+            <center>You can run your project with </br>
+            client-side rendering</br>
+            read, write and delete data from database</br>
+            and more other features.........
+            </center>
+            </p>
+            <p>
+             <a href ="https://www.facebook.com/Exchale"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+             <a href ="https://www.instagram.com/eckysaroyd_/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i>
+             </a>
+             <a href ="https://twitter.com/eckysaroyd"><i class="fa fa-twitter-square" aria-hidden="true"></i>
+             </a>
+             <a href ="https://github.com/eckysaroyd"><i class="fa fa-github-square"  style="color:elegant-color-dark" aria-hidden="true"></i>
+             </a>
+             <a href ="https://www.linkedin.com/in/eckysaroyd-nyato-45a59a125/"><i class="fa fa-linkedin-square" aria-hidden="true"></i>
+             </a>
+
+            </p>
+          </div>
+          <div class="card-footer text-muted">
+         <i>	<b>&copy; eckysaroyd</b></i>
+          </div>
+          </div>
+
  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
  <script  src="/browser.js"> </script>
+
+        <script>
+        let items = ${JSON.stringify(items)}
+        </script>
 
 </body>
 </html>
@@ -74,12 +101,11 @@ app.get('/', function(req, res)
 app.post('/create-items', function(req,res)
 {
    //console.log(req.body.item)
-   db.collection('items').insertOne({text: req.body.item},function()
-   {
-    //res.send("Thank You For submit")
-    res.redirect("/")
-   })  
+   db.collection('items').insertOne({text: req.body.text},function(err, info) {
+    res.json(info.ops[0])
+  })
 })
+
 app.post('/update-item',function(req,res){
     // console.log(req.body.text)
     // res.send("success")
