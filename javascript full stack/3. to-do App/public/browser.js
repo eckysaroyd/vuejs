@@ -1,3 +1,19 @@
+// create feature
+let createField = document.getElementById("create-field")
+
+document.getElementById("create-form").addEventListener("submit",function(e){
+e.preventDefault()
+axios.post('/create-items',{ id : createField}).then(function(){
+    //do something interest here in next video
+  //create the html for new items
+  alert("You have created a new items")
+  
+   }).catch(function(){
+    console.log("please try again leter")
+})
+})
+
+
 document.addEventListener("click",function(e){
     //delete Feature
     if (e.target.classList.contains("delete-me"))
