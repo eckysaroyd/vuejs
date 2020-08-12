@@ -31,6 +31,26 @@
         if(this.data.username.length> 30) {this.errors.push("Username can not exceed 30 characters")}
        
     }
+    User.prototype.login = function()
+    {  
+        return new Promise((resolve,reject)=>{
+
+            this.cleanUp()
+                if(attemptedUser && attemptedUser.password == this.data.password)
+            usersCollection.findOne({username:this.data.username}).then((attemptedUser)=>{
+                if(attemptedUser && attemptedUser.password == this.data.password)
+                {
+                    resolve("congrats")
+                }
+                else {
+                    reject("invalid username/password")
+                }
+
+            }).catch(function(){
+                reject("Please try again later")
+            })
+        })
+    }
 
     User.prototype.register = function(){
 
