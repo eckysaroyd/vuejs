@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "ecky_extension",
+  "version": "1.0",
+  "description": "this is a sample extension profile",
+  "icons": {
+    "128": "./images/128.png",
+    "48": "./images/48.png",
+    "16": "./images/16.png"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "./images/16.png",
+    "default_title": "ecky_extension"
+  },
+  "permissions": ["tabs", "storage"]
+}
