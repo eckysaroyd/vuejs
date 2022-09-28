@@ -12,10 +12,29 @@
 <body>
     <div id="app">
         <h1>Data Binding : Expression</h1>
-        <p></p>
+        <p>msg : {{msg}}</p>
+        <p>count + 1 : {{ count+1 }} </p>
+        <p>100*100 : {{100*100}}</p>
+        <p>greeting : {{greeting+', here we go!!'}}</p>
+        <p>{{greeting + ' reverse is :'}}{{greeting.split('').reverse('').join('')}}</p>
     </div>
 </body>
 <script>
-   
+    const vm = new Vue({
+        el: "#app",
+        data:{
+            msg:"Hello World",
+            count:10,
+            greeting:"vueJs",
+            product:{
+                instock:true
+            },
+        },
+        methods:{
+                getNewMessage(){
+                    return "This is my new message";
+                }
+            }
+    });
 </script>
 </html>
