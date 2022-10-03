@@ -7,17 +7,45 @@
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>vue js </title>
+    <style>
+        table { 
+            width: 100%;
+            border:none;
+            margin: 0;
+            padding: 0;
+            border-collapse: collapse;
+        }
+        th{
+            text-align: left;
 
+        }
+        td{
+            margin: 0;
+            padding: 4px;
+            font-size: 13px;
+        }
+        tr:nth-child(even){
+            background-color: aliceblue;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
-        <ul>
-            <li v-for="friend in friends" :key="friend.username ">
-                {{ friend.name }} ||
-                {{ friend.username }}
-            </li>
-            
-        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Twitter</th>
+
+                </tr>
+                <tr v-for="friend in friends">
+                    <td>{{ friend.name }} </td>
+                    <td>{{ friend.username }}</td>
+                    <td><a :href="'https://Twitter.com/'+friend.username">@{{ friend.username }}</a></td>
+                </tr>
+            </thead>
+        </table>
     </div>
     <script>
             var vm = new Vue({
