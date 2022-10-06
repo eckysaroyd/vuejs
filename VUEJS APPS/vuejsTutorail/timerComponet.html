@@ -7,16 +7,13 @@
     <!--  -->
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <title>Count App</title>
-    <style>
-        .negative{
-            color:#ff0000;
-        }
-    </style>
+    <title>Timer component </title>
+    
 </head>
 <body>
     <div id="app">
-        
+        <h2>{{ message }}</h2>
+        <h6>{{ now }}</h6>
     </div>
 </body>
 <script>
@@ -24,15 +21,12 @@
     el:'#app',
     data(){
         return {
-
+            message:'Time Format',
+            now : new Date()
         }
-    },
-    created(){
-        console.log("hi there");
-    },
-    mounted(){
-        console.log("VUE instance was mounted");
     }
+    // mounted(){
+    // }
    
    });
 </script>
