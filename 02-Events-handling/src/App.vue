@@ -11,19 +11,16 @@
       </div>
     </div>
 
-    <Customer age="25" designation="Software Engineer" name="Rajan" />
-
-    <Employee />
+    <Greeting />
   </div>
 
 </template>
 
 <script>
-import Customer from "@/components/Customer";
-import Employee from "@/components/Employee";
+import Greeting from "@/components/Greeting";
 
 export default {
-  components: { Employee, Customer }
+  components: { Greeting }
 };
 </script>
 
