@@ -1,0 +1,19 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue 3.0.2</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+  </head>
+  <body>
+    <h1>Hellow Vue 3.0.2</h1>
+    <div id="app">
+      {{title}},{{author}} , {{age}}
+      <div>
+        <button v-on:click="age++"> Increase Age </button>
+        <button v-on:click="age--"> Increase Age </button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
