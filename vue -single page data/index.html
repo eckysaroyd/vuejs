@@ -10,8 +10,11 @@
     <div id="app">
       {{title}},{{author}} , {{age}}
       <div>
+        <br>
         <button v-on:click="age++"> Increase Age </button>
         <button v-on:click="age--"> Increase Age </button>
+        <br>
+        <div @click="title='title has changed'">change title</div>
       </div>
     </div>
     <script src="app.js"></script>
